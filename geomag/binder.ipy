@@ -1,0 +1,17 @@
+#%%
+import sys
+sys.path.append('./callable/')
+import Obs, SECS
+
+CPath = './'
+#
+#Project = '/run/user/134173/gvfs/smb-share:server=knnzfs01,share=nz_projects/Iono-PDRV-NAV-NZ/Iono_WWE/SO_Projects/PROJECT_SW_on_PowerNetworks/'
+Project = r'//knnzfs01/nz_projects/Iono-PDRV-NAV-NZ/Iono_WWE/SO_Projects/PROJECT_SW_on_PowerNetworks/'
+DPath = Project+'80_Data/'
+RPath = Project+'30_Deliverables/'
+
+# Get perturbations from geomagnetic observatories
+#%run Get_Obs $CPath $DPath $RPath
+	
+# Interpolate obs data using SECS
+%run Get_SECS $CPath $DPath $RPath
